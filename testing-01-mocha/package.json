@@ -1,0 +1,38 @@
+{
+  "name": "design-patterns-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "compile": "npx babel js/src --out-dir js/dist",
+    "watch": "npx babel js/src --watch --out-dir js/dist",
+    "handlebars": "npx handlebars js/src/templates/loans.handlebars -f js/dist/loans.template.js",
+    "build": "npm run-script compile && npm run-script handlebars",
+    "test": "npm run-script compile && npx mocha -r esm test/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "chai": "^4.2.0",
+    "esm": "^3.0.84",
+    "handlebars": "^4.0.12",
+    "mocha": "^5.2.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ]
+    ]
+  }
+}
